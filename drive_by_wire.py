@@ -9,6 +9,7 @@ class DriveByWire:
         self._propulsion = Propulsion()
         self._transmission = Transmission()
         self._gear = Gear()
+        self.gear_string = ""
     
     def accelerate(self, target_speed):
         self._engine.on()
@@ -149,7 +150,20 @@ class Gear:
         self._gear = gear
     
     def get_gear(self):
-        return self._gear
+        match self._gear:
+            case 0:
+                gear_string = "P"
+            case 1:
+                gear_string = "R"
+            case 2:
+                gear_string = "N"
+            case 3:
+                gear_string = "D"
+            case 4:
+                gear_string = "L"
+            case _:
+                gear_string = "Invalid gear"
+        return gear_string
 
 def main():
     drive_by_wire = DriveByWire()

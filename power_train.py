@@ -7,8 +7,6 @@ from vehicle_dynamics import *
 from drive_by_wire import *
 from brake_by_wire import *
 
-print(sys.version)
-
 class PowerTrain:
     def __init__(self):
         self._engine = Engine()
@@ -111,6 +109,20 @@ class PowerTrain:
                 self.state = 0
         return self.state
     
-def main(): 
+def main():
+    # print(sys.version)
     """test out the power train program"""
-	
+    new_power_train = PowerTrain()
+    new_power_train.system_power_mode_state_flow(0)
+    print(new_power_train.get_status())
+    new_power_train.system_power_mode_state_flow(1)
+    print(new_power_train.get_status())
+    new_power_train.system_power_mode_state_flow(2)
+    print(new_power_train.get_status())
+    new_power_train.system_power_mode_state_flow(3)
+    print(new_power_train.get_status())
+    print('Testing texts')
+
+if __name__ == '__main__':
+	main()
+
