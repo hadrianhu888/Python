@@ -66,6 +66,42 @@ class PowerTrain:
     def get_gear(self):
         return self._transmission.get_gear()
     
+    def get_power(self):
+        return self._engine.get_power()
+    
+    def get_speed(self):
+        return self._propulsion.get_speed()
+    
+    def get_torque(self):
+        return self._engine.get_torque()
+    
+    def get_rpm(self):
+        return self._engine.get_rpm()
+        
+    def get_throttle(self):
+        return self._throttle_control_module.get_throttle()
+    
+    def get_brake(self):
+        return self._brake.get_brake()
+    
+    def get_clutch(self):
+        return self._transmission.get_clutch()
+    
+    def get_engine_temp(self):
+        return self._engine.get_engine_temp()
+    
+    def get_oil_temp(self):
+        return self._engine.get_oil_temp()
+    
+    def get_oil_pressure(self):
+        return self._engine.get_oil_pressure()
+    
+    def get_fuel_pressure(self):
+        return self._engine.get_fuel_pressure()
+    
+    def get_fuel_level(self):
+        return self._engine.get_fuel_level()
+    
     def get_rotation_speed(self):
         return self._propulsion.get_rotation_speed()
     
@@ -110,7 +146,7 @@ class PowerTrain:
         return self.state
     
 def main():
-    # print(sys.version)
+    print(sys.version)
     """test out the power train program"""
     new_power_train = PowerTrain()
     new_power_train.system_power_mode_state_flow(0)

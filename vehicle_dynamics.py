@@ -327,6 +327,15 @@ class BrakeSystem:
     def set_gear(self, gear):
         self._gear = gear
         
+    def get_brake(self):
+        return self._brake_control_module.get_status()
+
+    def get_gear(self):
+        return self._gearbox.get_gear()
+    
+    def get_rotation_speed(self):
+        return self.wheels.get_rotation_speed()
+        
 class PowerTrain:
     def __init__(self):
         self._engine = Engine()
