@@ -1,3 +1,4 @@
+import time 
 
 class BrakeSystem:
     def __init__(self):
