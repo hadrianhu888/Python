@@ -102,8 +102,17 @@ class Propulsion:
     def get_status(self):
         return self._is_on
     
-    def brake(self):
-        self._wheels.brake()
+    def brake(self, *args):
+        if len(args) == 0:
+            # Code for default braking behavior
+            print("Default braking.")
+        elif len(args) == 1:
+            # Code for braking with a specified force
+            print(f"Applying brake with force {args[0]}.")
+        else:
+            print("Invalid number of arguments.")
+        return self._wheels.brake()
+    
         
     def feedback(self):
         return "Brake applied successfully" if self._wheels.get_rotation_speed() == 0 else "Brake is being applied"

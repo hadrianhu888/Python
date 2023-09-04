@@ -48,6 +48,24 @@ class EngineControlModule:
 
     def on(self):
         self._is_on = True
+    
+    def off(self):
+        self._is_on = False
+        
+    def get_status(self):
+        return self._is_on
+    
+    def mass_air_flow(self, airflow, speed):
+        return airflow * speed
+
+    def mass_air_pressure(self, airflow, pressure): 
+        return airflow * pressure
+    
+    def fuel_air_ratio(self, fuel, air):
+        return fuel / air
+    
+    def mass_air_temperature(self, temperature):
+        return temperature 
 
 class Wheels:
     def __init__(self):
