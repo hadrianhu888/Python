@@ -1,4 +1,3 @@
-import time
 
 class BrakeSystem:
     def __init__(self):
@@ -88,6 +87,16 @@ class Gearbox:
         self._gear = gear
         
 class ThrottleControlModule:
+    def __init__(self):
+        self._is_on = False
+
+    def on(self):
+        self._is_on = True
+
+    def off(self):
+        self._is_on = False
+        
+class Brakes:
     def __init__(self):
         self._is_on = False
 
