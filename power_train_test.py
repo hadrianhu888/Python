@@ -34,11 +34,11 @@ def test_power_train_off(powerTrain):
 # Testing brake method with and without arguments
 def test_power_train_brake(powerTrain):
     powerTrain.brake()
-    assert powerTrain.get_brake() == 0  # Assuming brake method without args sets brake to 0
+    assert powerTrain.get_brake() == False  # Assuming brake method without args sets brake to 0
 
 def test_power_train_brake_with_arg(powerTrain):
     powerTrain.brake(1)
-    assert powerTrain.get_brake() == 1  # Assuming brake method with arg sets brake to 1
+    assert powerTrain.get_brake() == True  # Assuming brake method with arg sets brake to 1
 
 # Testing set_gear() method
 def test_power_train_set_gear(powerTrain):
@@ -56,3 +56,29 @@ def test_power_train_get_status(powerTrain):
 
 # ... Add other test cases as needed
 
+def test_power_train_accelerate(powerTrain):
+    powerTrain.accelerate(1)
+    assert powerTrain.get_speed() == 1
+    
+def test_power_train_velocity(powerTrain):
+    powerTrain.accelerate(1)
+    assert powerTrain.get_speed() == 1
+    
+def main():
+    powerTrain = PowerTrain()
+    test_power_train_initial_state(powerTrain)
+    test_power_train_on(powerTrain)
+    test_power_train_off(powerTrain)
+    test_power_train_brake(powerTrain)
+    test_power_train_brake_with_arg(powerTrain)
+    test_power_train_set_gear(powerTrain)
+    test_power_train_get_status(powerTrain)
+    test_power_train_accelerate(powerTrain)
+    test_power_train_velocity(powerTrain)
+    
+if __name__ == "__main__":
+    main()
+
+    
+
+    

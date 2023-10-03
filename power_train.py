@@ -160,5 +160,5 @@ def main():
     print('Testing texts')
 
 if __name__ == '__main__':
-	main()
+    main()
 
